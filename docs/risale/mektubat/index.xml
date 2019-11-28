@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MEKTUBAT on المدارس</title>
-    <link>/risale/mektubat/</link>
+    <link>https://zybk95.github.io/e-medrese/risale/mektubat/</link>
     <description>Recent content in MEKTUBAT on المدارس</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Jun 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/risale/mektubat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zybk95.github.io/e-medrese/risale/mektubat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ikinci mektup</title>
-      <link>/risale/mektubat/2-ikincimektub/</link>
+      <link>https://zybk95.github.io/e-medrese/risale/mektubat/2-ikincimektub/</link>
       <pubDate>Wed, 22 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/risale/mektubat/2-ikincimektub/</guid>
+      <guid>https://zybk95.github.io/e-medrese/risale/mektubat/2-ikincimektub/</guid>
       <description> ikinci mektup dosya içinden </description>
     </item>
     
     <item>
       <title>Üçüncü mektup</title>
-      <link>/risale/mektubat/3-ucuncumektub/</link>
+      <link>https://zybk95.github.io/e-medrese/risale/mektubat/3-ucuncumektub/</link>
       <pubDate>Mon, 22 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>/risale/mektubat/3-ucuncumektub/</guid>
+      <guid>https://zybk95.github.io/e-medrese/risale/mektubat/3-ucuncumektub/</guid>
       <description> ucuncu mektup dosya içinden </description>
     </item>
     
     <item>
       <title>dorduncu mektup</title>
-      <link>/risale/mektubat/4-dorduncumektub/</link>
+      <link>https://zybk95.github.io/e-medrese/risale/mektubat/4-dorduncumektub/</link>
       <pubDate>Sun, 22 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>/risale/mektubat/4-dorduncumektub/</guid>
+      <guid>https://zybk95.github.io/e-medrese/risale/mektubat/4-dorduncumektub/</guid>
       <description> dorduncu mektup dosya içinden </description>
     </item>
     
     <item>
       <title>Beşinci mektup</title>
-      <link>/risale/mektubat/5-besincimektub/</link>
+      <link>https://zybk95.github.io/e-medrese/risale/mektubat/5-besincimektub/</link>
       <pubDate>Sat, 22 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>/risale/mektubat/5-besincimektub/</guid>
+      <guid>https://zybk95.github.io/e-medrese/risale/mektubat/5-besincimektub/</guid>
       <description> besinci mektup dosya içinden </description>
     </item>
     
     <item>
       <title>Birinci mektup</title>
-      <link>/risale/mektubat/1-birincimektub/</link>
+      <link>https://zybk95.github.io/e-medrese/risale/mektubat/1-birincimektub/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/risale/mektubat/1-birincimektub/</guid>
+      <guid>https://zybk95.github.io/e-medrese/risale/mektubat/1-birincimektub/</guid>
       <description>ان في الحشر ثلاث مسائل هي: عودةُ الارواح الى الاجساد، وإحياءُ الاجساد، وانشاء الاجساد وبناؤها.
 المسألة الأولى: وهي مجئ الارواح وعودتها الى اجسادها، ومثاله هو: اجتماع الجنود المنتشرين في فترة الاستراحة والمتفرقين في شتى الجهات على الصوت المدوي للبوق العسكري. نعم، ان الصور الذي هو بوق اسرافيل عليه السلام، ليس قاصراً عن البوق العسكري، كما أن طاعة الارواح التي هي في جهة الأبد وعالم الذرات والتي أجابت بـ (قَالُوا: بَلى) (الاعراف:172) عندما سمعت نداء (اَلَسْتُ بِرَبّكُم) المقبل من اعماق الازل ونظامها يفوق بلاشك أضعاف اضعاف ما عند أفراد الجيش المنظم.</description>
     </item>
