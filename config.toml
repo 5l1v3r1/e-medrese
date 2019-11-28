@@ -1,6 +1,6 @@
 #NOT: sitede bulunan makaleler ve haberler aynı tarzdadır. bunların yapıları birbiri ile aynı olmalı.
 #.md dosyasının üst kısmında bulunan +++ lar arasındaki yerler tarz olarak aynı olacak...
-baseurl = "/"
+baseurl = "https://zybk95.github.io/e-medrese/"
 languageCode = "en-us"
 title = "المدارس"
 theme = "hugo-future-imperfect"
