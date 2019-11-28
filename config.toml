@@ -1,0 +1,185 @@
+#NOT: sitede bulunan makaleler ve haberler aynı tarzdadır. bunların yapıları birbiri ile aynı olmalı.
+#.md dosyasının üst kısmında bulunan +++ lar arasındaki yerler tarz olarak aynı olacak...
+baseurl = "/"
+languageCode = "en-us"
+title = "المدارس"
+theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
+paginate = 10
+disqusShortname = "shortname"
+googleAnalytics = ""
+pluralizeListTitles = false
+# Set the followings to true as part of your site SEO
+enableRobotsTXT = true
+canonifyURLs = true
+
+# yayına alınacak klasörü sececiz
+publishDir = "docs"
+
+
+[params]
+#navbardaki site logo-yazı
+  navbarTitle          = "@ المدارس "
+  
+# Temadan gelen
+  # Sets navbarTitle to match the section of the website
+  dynamicTitles        = true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = true
+  rssAppearAtBottom    = true
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
+  socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # set to show or to hide categories in the sidebar
+  showSidebarCategories = true
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = false
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
+  socialShare          = true
+  # Sets specific share to appear on posts (default behavior is to appear)
+  socialShareTwitter   = true
+  socialShareGoogleplus = true
+  socialShareFacebook  = true
+  socialShareReddit    = true
+  socialShareLinkedin  = true
+  socialShareStumbleupon = true
+  socialSharePinterest = true
+  socialShareEmail     = true
+
+  ##
+  customCSS            = ["default"]
+  customJS             = ["default"]
+
+  # options for highlight.js (version, additional languages, and theme)
+  disable_highlight = false # set to true to disable Highlight
+  highlightjsVersion = "9.11.0"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["r", "yaml", "css"]
+  highlightjsTheme = "github"
+  MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxVersion = "2.7.1"
+
+
+
+#Yan linkler
+  [[params.yanlinkler]]
+    name = "قراءة القرآن - الاستماع"
+    description="Kur'an oku dinle"
+    url = "/"
+    weight = 1
+  [[params.yanlinkler]]
+    name = "حزب الله هاكيكو نوريي"
+    description="Hizbü’l Hakaikü’n Nuriyye"
+    url = "/"
+    weight = 2
+  [[params.yanlinkler]]
+    name = "رساله نور"
+    description="risale-i nur"
+    url = "/"
+    weight = 3
+  [[params.yanlinkler]]
+    name = "بديع الزمان سعيد"
+    description="bediuzzaman"
+    url = "/"
+    weight = 4
+  [[params.yanlinkler]]
+    name = "اأحمد حسين أفندي"
+    description="ahmed hüsrev efendi"
+    url = "/"
+    weight = 5
+  [[params.yanlinkler]]
+    name = "مؤسسة حيرات"
+    description=""
+    url = "/"
+    weight = 6
+
+# Sidebar- yan taraf intro 
+    [params.intro]
+    header    = "المدراس قماش قطني"
+    description = "ترقبوا ..."
+    about     = "قالت قناة زفيزدا التلفزيونية التابعة لوزارة الدفاع الروسية اليوم الخميس إن روسيا بدأت إنشاء قاعدة مروحيات بمدينة القامشلي (شمال شرقي سوريا). وذكرت وكالة تاس للأنباء أن القاعدة الجديدة ستحميها أنظمة صواريخ أرض-جو، ونشرت ثلاث طائرات مروحية هناك بالفعل."
+
+    # This appears at the top of the sidebar above params.intro.header.
+    # A width of less than 100px is recommended from a design perspective.
+    [params.intro.pic]
+      src       = "/img/main/logos.png"
+
+# yan tarafta sidebarda eğer post gösterecek olursak burada dursun 
+  [params.postAmount]
+      sidebar = 5
+
+# navbar listesi
+  [[menu.main]]
+    name = "الصفحة الرئيسية"
+    url = "/"
+    identifier = "fa fa-home"
+    weight = 1
+
+  [[menu.main]]
+    name = "الصفحة .mak"
+    url = "/makale"
+    identifier = "fa fa-id-card-o"
+    weight = 2
+
+  [[menu.main]]
+    name = "الصفحة risale"
+    url = "/risale"
+    identifier = "fa fa-newspaper-o"
+    weight = 3
+
+  [[menu.main]]
+    name = "الرئيسية .hab"
+    url = "/haberler"
+    identifier = "fa fa-list"
+    weight = 4
+
+  [[menu.main]]
+    name = "الرئيسية Vid"
+    url = "/video"
+    identifier = "fa fa-sitemap"
+    weight = 5
+
+  [[menu.main]]
+    name = "الرئيسية"
+    url = "/"
+    identifier = "fa fa-envelope-o"
+    weight = 6
+
+  [[menu.main]]
+    name = "الرئيسية"
+    url = "/"
+    identifier = "fa fa-envelope-o"
+    weight = 7
+
+#sosyal medya şeyleri
+  [social]
+    facebook         = "example"
+    youtube          = ""
+    whatsapp         = ""
+    instagram        = "example"
+    twitter          = "example"
+  
+# YORUMLAR ... Disqus will take priority 
+  [params.staticman]
+      # Sets Statiman to be active
+      staticman = false
+      # Sets the location for Staticman to connect to
+      username  = ""
+      repo      = ""
+      branch    = ""
+
+      [params.staticman.recaptcha]
+        sitekey = "SITE_KEY"
+        secret  = "ENCRYPTED_SECRET"
+
+      # These are optional params related to the sidebar. They are recommended, but not
+      # required for proper functionality. HTML is supported within the params.
+

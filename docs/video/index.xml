@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Video on المدارس</title>
+    <link>/video/</link>
+    <description>Recent content in Video on المدارس</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/video/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>اسم الشهيد </title>
+      <link>/video/video1/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/video/video1/</guid>
+      <description>اسم الشهيد بهاء أبو العطا، الذي اغتالته طائرات حربية برز اسم الشهيد بهاء أبو العطا، الذي اغتالته طائرات حربية إسرائيلية فجر اليوم الثلاثاء،</description>
+    </item>
+    
+    <item>
+      <title>اسم الشهيد </title>
+      <link>/video/video2/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/video/video2/</guid>
+      <description> المتحدث باسم </description>
+    </item>
+    
+    <item>
+      <title>اسم الشهيد </title>
+      <link>/video/video3/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/video/video3/</guid>
+      <description> المحتجين وتعهد بالتصدي لمن المحتجين وتعهد بالتصدي لمن </description>
+    </item>
+    
+  </channel>
+</rss>
