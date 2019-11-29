@@ -2715,6 +2715,8 @@ small {
     transition: opacity 0.3s linear, transform 0.3s ease-in-out; }
   .carousel__nav-item[role="next"] {
     left: 0; }
+    .carousel__nav-item[role="next"] svg {
+      transform: scaleX(-1) !important; }
     .carousel__nav-item[role="next"]::before {
       right: 0; }
   .carousel__nav-item[role="previous"] {
@@ -2739,7 +2741,7 @@ small {
 .card__details {
   padding-right: 16px;
   visibility: hidden;
-  margin-top: -20em;
+  margin-top: -18em;
   width: 100%; }
 
 .card-resim {
