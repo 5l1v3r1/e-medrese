@@ -1,6 +1,16 @@
 ---
 label: yeni makale
 hide_body: true
-fields: []
+fields:
+- name: ali
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: ali
+  description: açıklama
 pages:
 - content/makale/yeni-makale.md
