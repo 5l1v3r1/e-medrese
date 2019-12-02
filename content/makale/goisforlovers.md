@@ -8,7 +8,7 @@ featuredalt = "Pic 2"
 featuredpath = "date"
 linktitle = ""
 tags = ["بجروح", "بجروح"]
-title = "المحتجين وتعهد A"
+title = "المحتجين وتعهد ABC"
 
 +++
 # BİSMİLLAHH المحتجين وتعهد بالتصدي  لمن
