@@ -2754,3 +2754,10 @@ small {
 
 ul {
   list-style-type: none; }
+
+.index-haber {
+  background-color: rebeccapurple;
+  display: flex; }
+  .index-haber-haberler {
+    margin-left: 1em;
+    background-color: red !important; }
