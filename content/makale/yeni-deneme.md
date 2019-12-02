@@ -1,7 +1,7 @@
 +++
 author = ""
 categories = [""]
-tags = [""]
+tags = ["asd"]
 date = ""
 description = ""
 featured = "pic03.jpg"
@@ -9,3 +9,5 @@ linktitle = ""
 title = ""
 type = "makale"
 +++
+
+bu yeni makale vs vs 
