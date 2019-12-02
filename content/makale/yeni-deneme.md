@@ -1,13 +1,12 @@
 +++
 author = ""
 categories = [""]
-tags = ["asd"]
 date = ""
 description = ""
 featured = "pic03.jpg"
 linktitle = ""
-title = ""
-type = "makale"
-+++
+tags = ["asd"]
+title = "yeni bir makale"
 
-bu yeni makale vs vs 
++++
+bu yeni makale vs vs
