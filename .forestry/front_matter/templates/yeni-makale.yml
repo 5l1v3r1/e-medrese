@@ -2,3 +2,5 @@
 label: yeni makale
 hide_body: true
 fields: []
+pages:
+- content/makale/yeni-makale.md
