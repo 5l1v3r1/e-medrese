@@ -1,0 +1,13 @@
+<div class="post">
+  {{ .Render "header" }}
+</div>
+
+<article class="post">
+  <div class="post-content">
+    <audio controls style="width: 100%;">
+      <source src="/audio/{{.Params.ses}}" type="audio/mpeg">
+    </audio>
+    {{ .Content }}
+  </div>
+  {{ .Render "prev-next" }}
+</article>

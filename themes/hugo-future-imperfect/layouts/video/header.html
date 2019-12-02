@@ -1,0 +1,30 @@
+<header class="video-header">
+
+    <!-- <div class="video-header-videocon">
+        {{ .Render "iframe-video" }}
+    </div> -->
+
+    <div class="video-header-title">
+        <h1 class="video-header-title-baslik"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        {{ with .Description }}
+        <p class="video-header-title-aciklama">{{ . }}</p>
+        {{ end }}
+
+        {{ $.Scratch.Set "dateType" .Date }}
+        <time class="video-header-meta-published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Day) }} -
+            {{ index $.Site.Data.arabicaylar (printf "%d" .Date.Month) }} -
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Year) }}
+        </time>
+    </div>
+
+    <!-- <div class="video-header-meta">
+        {{ $.Scratch.Set "dateType" .Date }}
+        <time class="video-header-meta-published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Day) }} -
+            {{ index $.Site.Data.arabicaylar (printf "%d" .Date.Month) }} -
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Year) }}
+        </time>
+    </div> -->
+
+</header>

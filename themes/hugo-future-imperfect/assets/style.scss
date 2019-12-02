@@ -1,0 +1,15 @@
+@import "eski.scss";
+
+//buradam sonrası bize ait...
+@import "global.scss";
+@import "nav.scss";
+@import "sidebar.scss";
+
+//özel sayfalar
+@import "risale.scss";
+@import "post.scss";
+@import "video.scss";
+
+@import "risaleslider.scss";
+
+@import "index.scss"

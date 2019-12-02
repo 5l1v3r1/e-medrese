@@ -1,0 +1,281 @@
+.post {
+  padding: 3em 3em 1em 3em;
+  background: #ffffff;
+  border: solid 1px rgba(160, 160, 160, 0.3);
+  margin: 0 0 2em 0;
+  position: relative;
+  &-header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+    right: -3em;
+    margin: -3em 0 3em 0;
+    position: relative;
+    width: calc(100% + 6em);
+    &-title {
+      -moz-flex-grow: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-grow: 1;
+      flex-grow: 1;
+      padding: 3.75em 3em 3.3em 3em;
+      &-baslik {
+        font-family: $font-yan-baslik;
+        font-size: $font-size-yanbaslik-boy;
+        font-weight: 900;
+      }
+      &-aciklama {
+        font-family: $font-text;
+        font-size: $font-size-text-boy;
+        font-weight: 300;
+        margin: 0;
+      }
+    }
+
+    &-meta {
+      padding: 3.75em 3em 1.75em 3em;
+      border-right: solid 1px rgba(160, 160, 160, 0.3);
+      text-align: right;
+      * {
+        margin: 0 0 1em 0;
+      }
+      &-published {
+        color: #3c3b3b;
+        display: block;
+        // font-family: "Raleway", Helvetica, sans-serif;
+        font-family: $font-text;
+        font-size: $font-size-text-boy-small;
+        font-weight: 1000;
+      }
+      &-readtime {
+        font-family: $font-text;
+        font-size: $font-size-text-boy-small;
+        font-weight: 100;
+      }
+    }
+  }
+
+  &-content {
+    h1 {
+      font-family: $font-yan-baslik;
+      font-size: $font-size-yanbaslik-boy;
+      font-weight: 1000;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: $font-text;
+      font-size: $font-size-text-boy;
+      font-weight: 500;
+    }
+    h2 {
+      font-weight: 900;
+    }
+    p {
+      font-family: $font-text;
+      font-size: $font-size-text-boy-small;
+      font-weight: 100;
+      margin: 1em 0;
+    }
+    img {
+      max-width: 100%;
+    }
+    a {
+      border-bottom: dotted 2px rgba(160, 160, 160, 0.65);
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.post > .image.featured {
+  overflow: hidden;
+}
+
+.post > .image.featured img {
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+
+.post > .image.featured:hover img {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.post {
+  footer {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+  }
+  .actions {
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+  }
+  .stats {
+    cursor: default;
+    list-style: none;
+    padding: 0;
+    li,
+    li ul {
+      cursor: default;
+      list-style: none;
+      padding: 0;
+      margin-top: 0;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      // background-color: blueviolet;
+      .fa {
+        margin-left: 1em;
+      }
+    }
+
+    li ul li {
+      border-left: solid 1px rgba(160, 160, 160, 0.3);
+      display: inline-block;
+      font-family: $font-text;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+    li ul li:last-child {
+      border-left: 0;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+//////////////////////XXXXXXXXXXXXXXXXXXXXXXXXX//////////////////////
+@media screen and (max-width: 980px) {
+  .post {
+    border-left: 0;
+    border-right: 0;
+    right: -3em;
+    width: calc(100% + (3em * 2));
+    &-header {
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 3.75em 3em 1.25em 3em;
+      border-left: 0;
+      &-title {
+        -ms-flex: 0 1 auto;
+        margin: 0 0 2em 0;
+        padding: 0;
+        text-align: center;
+      }
+      &-meta {
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        border-right: 0;
+        margin: 0 0 2em 0;
+        padding-top: 0;
+        padding: 0;
+        text-align: right;
+        width: 100%;
+        &-readtime {
+          border-right: solid 1px rgba(160, 160, 160, 0.3);
+          margin-right: 2em;
+          padding-right: 2em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .post {
+    padding: 1.5em 1.5em 0.1em 1.5em;
+    right: -1.5em;
+    margin: 0 0 2em 0;
+    width: calc(100% + (1.5em * 2));
+
+    &-header {
+      padding: 3em 1.5em 0.5em 1.5em;
+      right: -1.5em;
+      margin: -1.5em 0 1.5em 0;
+      width: calc(100% + 3em);
+      &-title {
+        &-baslik {
+          font-size: 1.5em;
+        }
+        &-aciklama {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post {
+    &-header {
+      &-meta {
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        * {
+          border-right: 0;
+          margin: 1em 0 0 0;
+          padding-right: 0;
+        }
+      }
+    }
+    .image.featured {
+      // margin-left: -1.5em;
+      margin-right: -1.5em;
+      margin-top: 0;
+      width: calc(100% + 3em);
+    }
+    footer {
+      -moz-align-items: stretch;
+      -webkit-align-items: stretch;
+      -ms-align-items: stretch;
+      align-items: stretch;
+      -moz-flex-direction: column-reverse;
+      -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      .stats {
+        text-align: center;
+        li ul li {
+          margin: 0 0 0 1.25em;
+          padding: 0 0 0 1.25em;
+        }
+      }
+    }
+  }
+}

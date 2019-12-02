@@ -1,0 +1,293 @@
+<div class="konteynir">
+    <div class="konteynir-section">
+
+        <div id="js-carousel" class="konteynir-section-carousel">
+            <ul class="carousel__items">
+
+                {{$path := "/img/risale"}}
+
+
+                {{ with .Site.GetPage "/risale" }}
+                {{range .Pages }}
+
+
+                {{ $turu := .RelPermalink }}
+
+                {{ $risaleLink := slice ""}}
+                {{ range .Params.risale }}
+                {{ $risaleLink = $risaleLink | append . }}
+                {{end}}
+
+                <li class="carousel__item">
+                    <article class="card">
+                        <!-- <img class="card-resim" src="/img/risale/mektubat.jpg" alt=""> -->
+                        <img class="card-resim" src="{{$path | relURL}}/{{.Params.image}}" alt="slide.title"
+                            draggable="false">
+
+                        <div class="card__details">
+                            <p><strong>{{.Title}}</strong></p>
+                            {{ $counter := 0 }}
+                            {{range .Params.risaleYazi}}
+
+                            {{ $counter = add $counter 1 }}
+                            {{$link := index ($risaleLink) $counter }}
+
+                            <p> <small> <a href="{{$turu}}/{{$link}}">{{.}}</a> </small> </p>
+                            {{end}}
+
+                        </div>
+                    </article>
+                </li>
+
+                {{end}}
+                {{end}}
+            </ul>
+
+            <button class="carousel__nav-item" role="previous" disabled>
+                <span class="icon icon--chevron-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                        <path fill="currentColor"
+                            d="M8.053 8.355c.193-.195.193-.517 0-.711l-3.26-3.289c-.193-.195-.192-.514.002-.709l1.371-1.371c.194-.194.512-.193.706.001l5.335 5.369c.195.195.195.515 0 .708l-5.335 5.37c-.194.192-.512.193-.706.002l-1.371-1.371c-.194-.195-.195-.514-.002-.709l3.26-3.29z" />
+                    </svg>
+                </span>
+            </button>
+
+            <button class="carousel__nav-item" role="next">
+                <span class="icon icon--chevron-left" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+                        <path fill="currentColor"
+                            d="M8.053 8.355c.193-.195.193-.517 0-.711l-3.26-3.289c-.193-.195-.192-.514.002-.709l1.371-1.371c.194-.194.512-.193.706.001l5.335 5.369c.195.195.195.515 0 .708l-5.335 5.37c-.194.192-.512.193-.706.002l-1.371-1.371c-.194-.195-.195-.514-.002-.709l3.26-3.29z" />
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    /** @type {Boolean} Whether to show log in the console or not */
+    var debug = true;
+
+    /** @type {Function} Log alias */
+    var log = debug
+        ? window.console.log.bind(window, 'Carousel:')
+        : function () { };
+
+    /**
+     * Carousel class
+     */
+    class Carousel {
+
+        /**
+         * Class constructor
+         *
+         * @return {Object} The created instance
+         */
+        constructor() {
+            log('constructor');
+
+            // Get DOM elements
+            this.itemsElement = document.querySelector('#js-carousel .carousel__items');
+            this.itemElements = document.querySelectorAll('#js-carousel .carousel__item');
+            this.navItemElements = document.querySelectorAll('#js-carousel .carousel__nav-item');
+
+            // Carousel infromations
+            this.length = this.itemElements.length;
+            this.index = 0;
+            this.x = 0;
+
+            // Set up everything
+            this.bindEvents()
+                .setItemsPosition()
+                .updatePosition(this.index)
+                .updateItems(this.index)
+                .updateNav(this.index);
+
+            return this;
+        }
+
+        /**
+         * Bind navigation event on:
+         * - navigation elements
+         * - each item
+         *
+         * @return {Object} The current instance
+         */
+        bindEvents() {
+            log('bindEvents');
+
+            const itemElementClickHandler = this.itemElementClickHandler.bind(this);
+            this.itemElements.forEach((itemElement, index) => {
+                itemElement.setAttribute('data-index', index);
+                itemElement.addEventListener('click', itemElementClickHandler);
+            });
+
+            const navItemElementClickHandler = this.navItemElementClickHandler.bind(this);
+            this.navItemElements.forEach((navItemElement) => {
+                navItemElement.addEventListener('click', navItemElementClickHandler);
+            });
+
+            return this;
+        }
+
+        /**
+         * Handler for the `click` event on each item of the carousel
+         *
+         * @return {void}
+         */
+        itemElementClickHandler(e) {
+            log('itemElementClickHandler');
+            const index = e.currentTarget.getAttribute('data-index');
+            this.goto(parseInt(index, 10));
+        }
+
+        /**
+         * Handler for the `click` event on navigation buttons
+         *
+         * @return {void}
+         */
+        navItemElementClickHandler(e) {
+            log('navItemElementClickHandler');
+            const direction = e.currentTarget.getAttribute('role');
+            this[direction]();
+        }
+
+        /**
+         * Go to the previous item
+         *
+         * @return {Object} The current instance
+         */
+        previous() {
+            log('previous');
+            this.goto(this.index - 1);
+            return this;
+        }
+
+        /**
+         * Go to the next item
+         *
+         * @return {Object} The current instance
+         */
+        next() {
+            log('next');
+            this.goto(this.index + 1);
+            return this;
+        }
+
+        /**
+         * Go to the given index if it is not lower than
+         * the minimum index (0) nor greater than the total
+         * index (length - 1)
+         *
+         * @return {Object} The current instance
+         */
+        goto(index) {
+            log('goto', index);
+
+            // Always update nav
+            this.updateNav(index);
+
+            // Check if the target index is not
+            // too small or too big
+            if (index < 0 || index > this.length - 1) {
+                log('already at one end');
+                return;
+            }
+
+            // Update everything to the current index
+            this.updatePosition(index)
+                .updateItems(index);
+            this.index = index;
+
+            return this;
+        }
+
+        /**
+         * Set all items position to display
+         * all of them on the same line
+         *
+         * @return {Object} The current instance
+         */
+        setItemsPosition() {
+            log('setItemsPosition');
+            let x = 0;
+            this.itemElements.forEach((itemElement, index) => {
+                itemElement.style.transform = `translate3d(${x}px, 0, 0)`;
+                x += itemElement.getBoundingClientRect().width;
+            });
+
+            return this;
+        }
+
+        /**
+         * Update the items container position to display
+         * the target index element in the first position
+         *
+         * @return {Object} The current instance
+         */
+        updatePosition(index) {
+            log('updatePosition');
+
+            if (index === this.index) {
+                log('index has not changed, do not update position');
+                return this;
+            }
+
+            let itemsWidth = 0;
+            this.itemElements.forEach((itemElement, i) => {
+                if (i < index) {
+                    itemsWidth += itemElement.getBoundingClientRect().width;
+                }
+            });
+            this.x = -itemsWidth;
+
+            this.itemsElement.style.transform = `translate3d(${this.x}px, 0, 0)`;
+
+            return this;
+        }
+
+
+        updateItems(index) {
+            log('updateItems');
+            this.itemElements.forEach((itemElement) => {
+                itemElement.classList.remove('is-active');
+            });
+            this.itemElements.item(index).classList.add('is-active');
+
+            return this;
+        }
+
+        /**
+         * Update the nav buttons states given an index
+         *
+         * @return {Object} The current instance
+         */
+        updateNav(index) {
+            log('updateNav');
+
+            const previous = this.navItemElements.item(0);
+            const next = this.navItemElements.item(1);
+
+            // Update previous button
+            if (index <= 0) {
+                previous.setAttribute('disabled', true);
+            } else {
+                previous.removeAttribute('disabled');
+            }
+
+            // Update next button
+            if (index >= this.length - 1) {
+                next.setAttribute('disabled', true);
+            } else {
+                next.removeAttribute('disabled');
+            }
+
+            return this;
+        }
+    }
+
+    // Init a carousel
+    const carousel = new Carousel();
+
+</script>

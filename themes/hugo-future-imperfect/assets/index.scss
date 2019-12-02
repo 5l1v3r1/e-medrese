@@ -1,0 +1,8 @@
+.index-haber {
+  background-color: rebeccapurple;
+  display: flex;
+  &-haberler{
+    margin-left: 1em ;
+    background-color: red !important;
+  }
+}

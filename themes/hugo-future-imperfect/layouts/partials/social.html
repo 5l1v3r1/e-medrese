@@ -1,0 +1,28 @@
+{{ with .Site.Social.facebook }}
+  <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+{{ end }}
+
+
+{{ with .Site.Social.youtube }}
+  <li><a href="//youtube.com/{{.}}" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+{{ end }}
+
+
+
+{{ with .Site.Social.whatsapp }}
+  <li><a href="//api.whatsapp.com/send?phone={{.}}" target="_blank" title="WhatsApp" class="fa fa-whatsapp"></a></li>
+{{ end }}
+
+
+{{ with .Site.Social.instagram }}
+  <li><a href="//instagram.com/{{.}}" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+{{ end }}
+
+
+{{ with .Site.Social.twitter }}
+  <li><a href="//twitter.com/{{.}}" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+{{ end }}
+
+{{ with .Site.Social.telegram }}
+  <li><a href="//telegram.me/{{.}}" target="_blank" title="telegram" class="fa fa-telegram"></a></li>
+{{ end }}

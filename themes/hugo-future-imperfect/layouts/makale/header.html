@@ -1,0 +1,24 @@
+<header class="post-header">
+    <div class="post-header-title">
+        <h1 class="post-header-title-baslik"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        {{ with .Description }}
+        <p class="post-header-title-aciklama">{{ . }}</p>
+        {{ end }}
+    </div>
+    <div class="post-header-meta">
+        {{ $.Scratch.Set "dateType" .Date }}
+
+        <time class="post-header-meta-published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Day) }} -
+            {{ index $.Site.Data.arabicaylar (printf "%d" .Date.Month) }} -
+            {{ index $.Site.Data.sayilar (printf "%d" .Date.Year) }}
+        </time>
+        <!-- <span class="author">{{ .Params.author }}</span> -->
+        <p class="post-header-meta-readtime">
+            {{ if .Site.Params.includeReadingTime }}
+            {{$okumaSuresi := .ReadingTime }}
+            <b> {{ index $.Site.Data.sayilar (printf "%d" $okumaSuresi) }} </b> -  قراءة دقيقة
+            {{ end }}
+        </p>
+    </div>
+</header>

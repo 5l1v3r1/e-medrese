@@ -1,0 +1,26 @@
+<article class="post">
+
+  <h1 class="video-header-title-baslik"> {{.Title}} </h1>
+  {{ with .Description }}
+  <p class="video-header-title-aciklama">{{ . }}</p>
+  {{ end }}
+
+  <div>
+    {{ .Render "iframe-video" }}
+  </div>
+
+  <div class="post-content">
+    <p>
+      {{ .Content }}
+    </p>
+  </div>
+
+  <footer>
+    {{ .Render "footer-category" }}
+  </footer>
+</article>
+
+<!-- yorum konacak olursa açılır burası -->
+<!-- {{ .Render "comments" }} -->
+
+{{ .Render "prev-next" }}

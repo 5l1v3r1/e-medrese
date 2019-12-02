@@ -1,0 +1,26 @@
+<nav class="risale-listeleme">
+
+<!-- sonracığıma hengi türden olduğunu şurada yakayalım -->
+{{ $turu := .RelPermalink }}
+
+{{.RelPermalink }}
+<!-- hem orada gözükecek yaziyi hemde linki aynı döngüde yapabilmek için önce linkleri bi diziye atıyoruz... -->
+{{ $risaleLink := slice ""}}
+{{ range .Params.risale }}
+{{ $risaleLink = $risaleLink | append . }}
+{{end}}
+
+    <h2 id="baslik">{{ .Title }}</h2>
+    <input id="toggle" type="checkbox" checked>
+    <ul>
+        <!-- daha sonrada burada hepsini harmanlayıp gösterelim linkleride verelim... -->
+        {{ $counter := 0 }}
+        {{range .Params.risaleYazi}}
+
+        {{ $counter = add $counter 1 }}
+        {{$link := index ($risaleLink) $counter }}
+
+        <li> <a href="{{$turu}}/{{$link}}">{{.}}</a></li>
+        {{end}}
+    </ul>
+</nav>
